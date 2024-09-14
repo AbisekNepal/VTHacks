@@ -44,7 +44,8 @@ def login():
             return "Invalid email or password. Please try again."
 
         # return f"Email: {email}, Password: {password}"
-    return render_template('login.html')
+    # return render_template('login.html')
+    return render_template('start.html')
 
 @app.route('/register', methods=['GET', 'POST'])
 def register():
