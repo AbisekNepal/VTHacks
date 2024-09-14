@@ -1,37 +1,40 @@
 * {
-    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-family: 'Montserrat', sans-serif;
     margin: 0;
     padding: 0;
 }
+
 .navbar {
-    background-color: #f18807; /* Dim Grey */
+    background-color: #f18807;
+    /* Dim Grey */
     color: #fff;
-    padding: 1em;
+    padding: 1.5em;
     display: flex;
     justify-content: space-between;
     align-items: center;
-  }
-  .navbar-brand {
+}
+
+.navbar-brand {
     font-size: 1.5em;
     font-weight: bold;
-  }
-  
-  .nav-links {
+}
+
+.nav-links {
     list-style: none;
     margin: 0;
     padding: 0;
     display: flex;
-  }
-  
-  .nav-links li {
+}
+
+.nav-links li {
     margin-left: 20px;
-  }
-  
-  .nav-links a {
+}
+
+.nav-links a {
     color: #fff;
     text-decoration: none;
-  }
-  
+}
+
 body {
     background-color: #F18807;
     overflow-x: hidden;
@@ -44,14 +47,14 @@ body {
     justify-content: space-between;
     background-color: black;
     width: 100%;
-    height: 3rem;
+    height: 4rem;
 }
 
 a {
     text-decoration: none;
     color: white;
     letter-spacing: 0.05rem;
-    padding: 1rem;
+    padding: 1.5rem;
 }
 
 #start {

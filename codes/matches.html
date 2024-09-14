@@ -1,22 +1,25 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SwipeOverFlow - Past Matches</title>
     <link rel="stylesheet" href="matchstyles.css">
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Varela+Round&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Varela+Round&display=swap"
+        rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
 </head>
+
 <body>
-    <nav class="navbar">
-        <div class="navbar-brand">SwipeOverFlow</div>
-        <ul class="nav-links">
-            <li><a href="feed.html">Feed</a></li>
-            <li><a href="profileform.html">Profile</a></li>
-            <li><a href="matches.html">Matches</a></li>
-        </ul>
-    </nav>
+    <div class="navbar">
+        <a class="navbar-brand" href="index.html">SwipeOverflow</a>
+        <span class="nav-links">
+            <a href="feed.html">Feed</a>
+            <a href="profileform.html">Profile</a>
+            <a href="matches.html">Matches</a>
+        </span>
+    </div>
     <div class="content-container">
         <h1>People You Have Matched With</h1>
         <div class="matches-list">
@@ -44,14 +47,15 @@
 
     <script src="script.js">
         function copyToClipboard(text) {
-    // Use the Clipboard API to write text to the clipboard
-    navigator.clipboard.writeText(text).then(() => {
-        // Provide feedback to the user
-        alert(`Copied to clipboard: ${text}`);
-    }).catch(err => {
-        console.error('Failed to copy text: ', err);
-    });
-}
+            // Use the Clipboard API to write text to the clipboard
+            navigator.clipboard.writeText(text).then(() => {
+                // Provide feedback to the user
+                alert(`Copied to clipboard: ${text}`);
+            }).catch(err => {
+                console.error('Failed to copy text: ', err);
+            });
+        }
     </script>
 </body>
+
 </html>
