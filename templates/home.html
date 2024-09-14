@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+</head>
+<body>
+    <h1>Welcome, {{ logged_in_user['name'] }}!</h1>
+    <h2>Other Users:</h2>
+    <ul>
+        {% for user in users %}
+            <br>
+            <p><strong>Name:</strong> {{ user['name'] }}</p>
+            <p><strong>Domain:</strong> {{ user.get('domain', 'N/A') }}</p>
+            <p><strong>Experience:</strong> {{ user.get('experience', 'N/A') }}</p>
+            <p><strong>Preferred Team Size:</strong> {{ user.get('prefteamsize', 'N/A') }}</p>
+            <p><strong>Place to Stay:</strong> {{ user.get('placetostay', 'N/A') }}</p>
+            <p><strong>Can Carpool:</strong> {{ user.get('cancarpool', 'N/A') }}</p>
+            <p><strong>Origin:</strong> {{ user.get('origin', 'N/A') }}</p>
+            <p><strong>Current Hack:</strong> {{ user.get('currhack', 'N/A') }}</p>
+            <br>
+        {% endfor %}
+    </ul>
+    <a href="/logout">
+        <button>Log Out</button>
+    </a>
+</body>
+</html>
