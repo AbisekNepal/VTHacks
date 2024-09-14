@@ -4,7 +4,7 @@
 **Swipe Overflow**
 
 #### Project Description
-Swipe Overflow is an innovative app designed to help hackathon participants find teammates, locate places to stay, and connect with friends for carpooling. Our goal is to streamline the hackathon experience, making it easier for participants to focus on what matters most: creating and innovating.
+Swipe Overflow is an app designed to help hackathon participants find teammates, places to stay, and connect with others to carpool. Our goal is to streamline the hackathon experience, making it easier for participants to focus on what matters most: creating and innovating.
 
 #### Table of Contents
 - [Project Description](#project-description)
