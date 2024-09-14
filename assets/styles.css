@@ -1,0 +1,122 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-image: url('../Minimalist_Fashion_Banner_1.png');
+    background-size: 100%;
+    background-repeat: no-repeat; 
+    background-position: top;
+    height: 100vh;
+    margin: 0;
+    padding: 0;
+    font-family: 'Arial', sans-serif;
+    background-color: #d68421;
+}
+
+.navbar {
+    display: flex;
+    justify-content: flex-start; 
+    align-items: center;
+    padding: 10px 20px;
+    background-color: #000;
+    color: #fff;
+}
+
+.navbar .logo {
+    font-size: 24px;
+    font-weight: bold;
+    text-transform: lowercase;
+    margin-right: 50px; 
+}
+
+.navbar ul {
+    list-style: none;
+    display: flex;
+    margin-right: auto;
+}
+
+.navbar ul li {
+    margin-right: 20px;
+}
+
+.navbar ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 16px;
+}
+
+.navbar .login-btn {
+    background-color: #fff;
+    color: #000;
+    border: none;
+    padding: 10px 15px;
+    cursor: pointer;
+    font-size: 16px;
+    margin-left: auto;
+}
+
+
+.navbar .login-btn {
+    background-color: #fff;
+    color: #000;
+    border: none;
+    padding: 10px 15px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.hero {
+    height: 100vh;
+    background-image: url('your-background-image.jpg');
+    background-size: cover;
+    background-position: center;
+    position: relative;
+}
+
+.overlay {
+    display: flex;
+    justify-content: flex-start; 
+    align-items: flex-end; 
+    height: 50%; 
+    width: 50%;
+    position: absolute;
+    top: 5%;
+    left: 5%;
+    text-align: center;
+    color: #fff;
+}
+
+.hero h1 {
+    font-size: 60px;
+    font-weight: bold;
+}
+
+.create-btn {
+    background-color: #ff6a00;
+    border: none;
+    color: #fff;
+    padding: 15px 30px;
+    margin-top: 30px;
+    border-radius: 5px;
+   
+}
+
+.login-btn {
+    margin-left: auto;
+    background-color: #fff;
+    color: #000;
+    border: none;
+    padding: 10px 15px;
+    cursor: pointer;
+    font-size: 16px;
+    border-radius: 5px;
+}
+
+.login-link {
+    color: inherit; 
+    text-decoration: none;
+    display: block;
+}
