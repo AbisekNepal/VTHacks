@@ -1,0 +1,87 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    background-color: #f4f4f9;
+    color: #000000;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+}
+
+.navbar {
+    background-color: #f18807;
+    /* Dim Grey */
+    color: #fff;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    padding: 1rem;
+}
+
+.navbar-brand {
+    font-size: 1.5em;
+    font-weight: bold;
+}
+
+a.navbar-brand {
+    text-decoration: none;
+    color: white;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    flex-direction: row;
+    gap: 1rem;
+}
+
+.nav-links a {
+    color: #fff;
+    text-decoration: none;
+}
+
+.content-container {
+    padding: 2em;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+h1 {
+    font-family: 'Varela Round', sans-serif;
+    font-size: 2em;
+    margin-bottom: 1em;
+    color: #636363;
+}
+
+.matches-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+}
+
+.match-card {
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    padding: 1.5em;
+    transition: transform 0.3s;
+}
+
+.match-card:hover {
+    transform: translateY(-5px);
+}
+
+.match-card h2 {
+    margin-top: 0;
+    color: #f18807;
+    /* Orange */
+}
+
+.match-card p {
+    margin: 0.5em 0;
+}

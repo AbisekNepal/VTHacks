@@ -1,4 +1,4 @@
-from flask import Flask, session, render_template, request, redirect, url_for
+from flask import Flask, flash, session, render_template, request, redirect, url_for
 from pymongo import MongoClient
 from bson import ObjectId
 
@@ -46,6 +46,31 @@ def login():
         # return f"Email: {email}, Password: {password}"
     # return render_template('login.html')
     return render_template('start.html')
+
+@app.route('/signup', methods=['POST'])
+def signup():
+    email = request.form.get('email')
+    password = request.form.get('password')
+    confirm_password = request.form.get('confirm_password')
+
+    # Check if the user already exists
+    if users_collection.find_one({'email': email}):
+        flash('Email already exists. Please log in.')
+        return redirect(url_for('login'))  # Redirect to the login page or home
+
+    # Check if passwords match
+    if password != confirm_password:
+        flash('Passwords do not match.')
+        return redirect(url_for('signup'))  # Redirect to the signup page or home
+
+    # Insert the new user into the database
+    users_collection.insert_one({
+        'email': email,
+        'password': password
+    })
+
+    flash('Sign up successful! Please log in.')
+    return redirect(url_for('login'))  
 
 @app.route('/register', methods=['GET', 'POST'])
 def register():
