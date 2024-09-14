@@ -23,16 +23,23 @@
 
     <div class="filter-options">
         <button class="filter-button active">All</button>
-        <button class="filter-button">Hackathons</button>
+        <div class="dropdown">
+            <select class="filter-button" name="hackathon" id="hackathon">
+                <option selected disabled>Hackathon</option>
+                <option value="hack1">VTHacks</option>
+                <option value="hack2">HooHacks</option>
+                <option value="hack3">Hoya Hacks</option>
+            </select>
+        </div>
         <button class="filter-button">Same Major</button>
         <button class="filter-button">Same Interests</button>
         <div class="dropdown">
-            <button class="filter-button dropdown-toggle">Team Size</button>
-            <ul class="dropdown-menu">
-                <li><a href="#">2</a></li>
-                <li><a href="#">3</a></li>
-                <li><a href="#">4</a></li>
-            </ul>
+            <select class="filter-button" name="team-size" id="team-size">
+                <option selected disabled>Team Size</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+            </select>
         </div>
     </div>
     <div class="feed-container">
