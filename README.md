@@ -68,7 +68,7 @@ We have several upgrades planned for Swipe Overflow:
 #### Team
 Swipe Overflow was developed by:
 
-- **Abhishek**
+- **Abhishek Nepal**
 - **Ethan**
 - **Olivia Watt**
 - **Aiden**
