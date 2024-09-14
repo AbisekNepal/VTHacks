@@ -5,7 +5,7 @@ body {
 }
 
 .navbar {
-  background-color: #636363; /* Dim Grey */
+  background-color: #f18807; /* Dim Grey */
   color: #fff;
   padding: 1em;
   display: flex;
@@ -114,6 +114,7 @@ body {
   width: 200px; /* Increased size */
   height: 200px; /* Increased size */
   border-radius: 50%;
+  object-fit: cover;
 }
 
 .card-body {
