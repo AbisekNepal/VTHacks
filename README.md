@@ -4,7 +4,7 @@
 **Swipe Overflow**
 
 #### Project Description
-Swipe Overflow is an innovative app designed to help hackathon participants find teammates, locate places to stay, and connect with friends for carpooling. Our goal is to streamline the hackathon experience, making it easier for participants to focus on what matters most: creating and innovating.
+Swipe Overflow is an app designed to help hackathon participants find teammates, places to stay, and connect with others to carpool. Our goal is to streamline the hackathon experience, making it easier for participants to focus on what matters most: creating and innovating.
 
 #### Table of Contents
 - [Project Description](#project-description)
@@ -20,11 +20,10 @@ Swipe Overflow is an innovative app designed to help hackathon participants find
 - [Support](#support)
 
 #### Features
-- **Teammate Finder**: Easily connect with potential teammates based on shared interests and skills.
-- **Accommodation Finder**: Locate nearby places to stay during the hackathon.
-- **Carpooling**: Connect with other participants for carpooling, reducing travel costs and environmental impact.
-- **Event Calendar**: Keep track of hackathon schedules, deadlines, and important events.
-- **Resource Sharing**: Share resources, such as tools, libraries, and documentation, with your team.
+- **Find Teammates**: Easily connect with potential teammates based on complimentary interests and skills.
+- **Housing/Shelter Accomodations**: Locate nearby or convenient places to stay during the hackathon.
+- **Carpooling**: Connect with other participants for carpooling, reduced travel costs, and reduced environmental impact.
+- **Communication Facilitation**: Easily obtain team contact information through team page.
 
 #### Getting Started
 To get started with Swipe Overflow, follow these steps:
@@ -47,9 +46,10 @@ For detailed installation instructions, please refer to the [Installation Guide]
 
 #### Usage
 1. **Sign Up/Log In**: Create an account or log in to access the app's features.
-2. **Find Teammates**: Use the teammate finder to connect with other participants.
-3. **Find Accommodation**: Search for nearby places to stay.
-4. **Carpool**: Connect with others for carpooling.
+2. **Set Up Profile**: Add information to your profile, such as your school of origin, skills, and interests.
+3. **Find Teammates**: Use the teammate-finder to connect with other participants.
+4. **Find Shelter**: Coordinate housing with teammates.
+5. **Carpool**: Connect with others for carpooling.
 
 #### Challenges
 During the development of Swipe Overflow, we faced several challenges:
@@ -71,7 +71,7 @@ Swipe Overflow was developed by:
 - **Abhishek Nepal**
 - **Ethan**
 - **Olivia Watt**
-- **Aiden**
+- **Aidan Kim**
 
 #### Contributing
 We welcome contributions to Swipe Overflow. Please refer to our [Contribution Guidelines](docs/CONTRIBUTING.md) for more information.
