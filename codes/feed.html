@@ -5,7 +5,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SwipeOverFlow</title>
-    <link rel="stylesheet" href="styles.css">
+    <!-- Link to your CSS file using Flask's url_for -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Varela+Round&display=swap"
         rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
@@ -13,11 +14,11 @@
 
 <body>
     <div class="navbar">
-        <a class="navbar-brand" href="index.html">SwipeOverflow</a>
+        <a class="navbar-brand" href="{{ url_for('index') }}">SwipeOverflow</a>
         <span class="nav-links">
-            <a href="feed.html">Feed</a>
-            <a href="profileform.html">Profile</a>
-            <a href="matches.html">Matches</a>
+            <a href="{{ url_for('feed') }}">Feed</a>
+            <a href="{{ url_for('profile') }}">Profile</a>
+            <a href="{{ url_for('matches') }}">Matches</a>
         </span>
     </div>
 
@@ -42,11 +43,13 @@
             </select>
         </div>
     </div>
+
     <div class="feed-container">
         <div class="card" id="card-1">
             <div class="card-header">
                 <h2>John Doe</h2>
-                <img class="profile-picture" src="Logo high-res.png" alt="Profile Picture">
+                <img class="profile-picture" src="{{ url_for('static', filename='Logo high-res.png') }}"
+                    alt="Profile Picture">
             </div>
             <div class="card-body">
                 <p>Interests: Web Development, Machine Learning, Data Science</p>
@@ -59,41 +62,12 @@
                 <button class="swipe-button right" onclick="swipeRight(1)">✔️</button>
             </div>
         </div>
-        <div class="card" id="card-2" style="display: none;">
-            <div class="card-header">
-                <h2>Jane Smith</h2>
-                <img class="profile-picture" src="Logo high-res.png" alt="Profile Picture">
-            </div>
-            <div class="card-body">
-                <p>Interests: Mobile App Development, Cloud Computing, Cyber Security</p>
-                <p>Major: Computer Science</p>
-                <p>Hackathon Experience: 1-3</p>
-                <p>University: Harvard University</p>
-            </div>
-            <div class="card-footer">
-                <button class="swipe-button left" onclick="swipeLeft(2)">❌</button>
-                <button class="swipe-button right" onclick="swipeRight(2)">✔️</button>
-            </div>
-        </div>
-        <div class="card" id="card-3" style="display: none;">
-            <div class="card-header">
-                <h2>Bob Johnson</h2>
-                <img class="profile-picture" src="Logo high-res.png" alt="Profile Picture">
-            </div>
-            <div class="card-body">
-                <p>Interests: Artificial Intelligence, Blockchain, IoT Development</p>
-                <p>Major: Computer Science</p>
-                <p>Hackathon Experience: 1-3</p>
-                <p>University: Harvard University</p>
-            </div>
-            <div class="card-footer">
-                <button class="swipe-button left" onclick="swipeLeft(3)">❌</button>
-                <button class="swipe-button right" onclick="swipeRight(3)">✔️</button>
-            </div>
-        </div>
+
+        <!-- Other Cards... -->
     </div>
 
-    <script src="script.js"></script>
+    <!-- Link your JS file using url_for -->
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
 </body>
 
 </html>
