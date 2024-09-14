@@ -5,6 +5,13 @@
 }
 
 body {
+    background-image: url('../Minimalist_Fashion_Banner_1.png');
+    background-size: 100%;
+    background-repeat: no-repeat; 
+    background-position: top;
+    height: 100vh;
+    margin: 0;
+    padding: 0;
     font-family: 'Arial', sans-serif;
     background-color: #d68421;
 }
@@ -70,10 +77,14 @@ body {
 }
 
 .overlay {
+    display: flex;
+    justify-content: flex-start; 
+    align-items: flex-end; 
+    height: 50%; 
+    width: 50%;
     position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+    top: 5%;
+    left: 5%;
     text-align: center;
     color: #fff;
 }
@@ -84,7 +95,7 @@ body {
 }
 
 .create-btn {
-    background-color: #000000;
+    background-color: #ff6a00;
     border: none;
     color: #fff;
     padding: 15px 30px;
@@ -101,6 +112,7 @@ body {
     padding: 10px 15px;
     cursor: pointer;
     font-size: 16px;
+    border-radius: 5px;
 }
 
 .login-link {
