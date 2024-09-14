@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile</title>
+    <style>
+        body {
+            background-color: black;
+            font-family: Arial, sans-serif;
+        }
+        h2 {
+            color: white;
+            text-align: center;
+        }
+        form {
+            width: 50%;
+            margin: 0 auto;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        input, select {
+            display: flex;
+            align-items: center;
+            width: 96%;
+            padding: 10px;
+            margin: 10px 0;
+        }
+        label {
+            color: white;
+            font-weight: bold;
+        }
+        button {
+            padding: 10px;
+            width: 100%;
+            background-color: #f18807;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #f18807;
+        }
+    </style>
+</head>
+<body>
+
+    <h2>Your Profile</h2>
+    <form action="/submit-profile" method="POST">
+        <label for="name">Name</label>
+        <input type="text" id="name" name="name" required>
+
+        <label for="email">Email Address</label>
+        <input type="email" id="email" name="email" required>
+
+        <label for="new-password">New Password</label>
+        <input type="password" id="new-password" name="new-password">
+
+        <label for="confirm-password">Confirm Password</label>
+        <input type="password" id="confirm-password" name="confirm-password">
+
+        <label for="university">University</label>
+        <input type="text" id="university" name="university">
+
+        <label for="interests">Interests</label>
+        <input type="text" id="interests" name="interests">
+
+        <label for="skills">Skills</label>
+        <input type="text" id="skills" name="skills">
+
+        <label for="front-end">Front End</label>
+        <input type="text" id="front-end" name="front-end">
+
+        <label for="hackathon-experience">Hackathon Experience</label>
+        <select id="hackathon-experience" name="hackathon-experience">
+            <option value="never">No Experience</option>
+            <option value="1-3">Some Experience</option>
+            <option value="3-5">Lots of Experience (3+ hackathons)</option>
+        </select>
+
+        <label for="housing">Housing</label>
+        <select id="housing" name="housing">
+            <option value="cannot-share">I have a place to stay and can share with others</option>
+            <option value="can-share">I have a place to stay but cannot share with others</option>
+            <option value="needs-help">I do not have a place to stay</option>
+        </select>
+
+        <label for="driving-status">Transportation</label>
+        <select id="driving-status" name="driving-status">
+            <option value="cannot-help">I'm able to get to the hackathon but cannot provide transportation to others</option>
+            <option value="needs-help">I need a ride</option>
+            <option value="can-help">I can provide transportation for others</option>
+
+        </select>
+
+        <button type="submit">Save</button>
+    </form>
+
+</body>
+</html>
