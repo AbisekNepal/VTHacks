@@ -1,6 +1,6 @@
-### Swipe Overflow README
+###  README
 
-#### Project Title
+#### Project Title Swipe Overflow
 **Swipe Overflow**
 
 #### Project Description
