@@ -31,7 +31,7 @@ To get started with Swipe Overflow, follow these steps:
 
 1. **Clone the Repository**:
    ```bash
-   git clone https://github.com/your-username/swipe-overflow.git
+   git clone https://github.com/abisekNepal/VTHacks.git
    ```
 2. **Install Dependencies**:
    ```bash
