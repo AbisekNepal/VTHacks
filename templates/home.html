@@ -7,6 +7,35 @@
 </head>
 <body>
     <h1>Welcome, {{ logged_in_user['name'] }}!</h1>
+    <h2>Filter Users:</h2>
+
+    <form method="get" action="/">
+        <label for="domain">Preferred Team Member Domains:</label>
+        <select id="domain" name="domain">
+            <option value="">All</option>
+            <option value="Front-end">Front-end</option>
+            <option value="Back-end">Back-end</option>
+            <option value="Full-stack">Back-end</option>
+        </select>
+        <br>
+        <label for="experience">Preferred Team Member Experience:</label>
+        <select id="experience" name="experience">
+            <option value="">All</option>
+            <option value="First-Timer">First-Timer</option>
+            <option value="Veteran">Veteran</option>
+        </select>
+        <br>
+        <label for="team_size">Preferred Team Size:</label>
+        <select id="team_size" name="team_size">
+            <option value="">All</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+        </select>
+        <br>
+        <button type="submit">Filter</button>
+    </form>
+
     <h2>Other Users:</h2>
     <ul>
         {% for user in users %}

@@ -74,13 +74,29 @@ def home():
     if 'user_id' in session:
         user = users_collection.find_one({"_id": ObjectId(session['user_id'])})
         user_id = ObjectId(session['user_id'])
-        # user = users.find_one({"_id": session['user_id']})
 
-        users = users_collection.find({"_id": {"$ne": user_id}})
-        
-        return render_template('home.html', logged_in_user = user, users = users)
+        # Get the preferred team size and experience from the query parameters
+        team_size = request.args.get('team_size', '')
+        experience = request.args.get('experience', '')
+        domain = request.args.get('domain', '')
+
+        # Prepare the filter query
+        query = {"_id": {"$ne": user_id}}
+
+        if team_size:
+            query['prefteamsize'] = int(team_size)
+        if experience:
+            query['experience'] = experience
+        if domain: 
+            query['domain'] = domain
+
+        # Fetch users from MongoDB based on the filter query
+        users = users_collection.find(query)
+
+        return render_template('home.html', logged_in_user=user, users=users)
     else:
         return redirect(url_for('login'))
+
 
 @app.route('/logout')
 def logout():
