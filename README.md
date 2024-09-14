@@ -1,6 +1,6 @@
 ###  README
 
-#### Project Title Swipe Overflow
+#### Project Title: Swipe Overflow
 **Swipe Overflow**
 
 #### Project Description
@@ -70,7 +70,7 @@ Swipe Overflow was developed by:
 
 - **Abhishek**
 - **Ethan**
-- **Olivia**
+- **Olivia Watt**
 - **Aiden**
 
 #### Contributing
