@@ -71,7 +71,7 @@ Swipe Overflow was developed by:
 - **Abhishek Nepal**
 - **Ethan**
 - **Olivia Watt**
-- **Aiden**
+- **Aidan Kim**
 
 #### Contributing
 We welcome contributions to Swipe Overflow. Please refer to our [Contribution Guidelines](docs/CONTRIBUTING.md) for more information.
