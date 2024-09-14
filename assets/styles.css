@@ -1,122 +1,148 @@
 * {
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
 }
 
 body {
-    background-image: url('../Minimalist_Fashion_Banner_1.png');
-    background-size: 100%;
-    background-repeat: no-repeat; 
-    background-position: top;
+    background-color: #F18807;
+    overflow-x: hidden;
+}
+
+#navigation {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    background-color: black;
+    width: 100%;
+    height: 3rem;
+}
+
+a {
+    text-decoration: none;
+    color: white;
+    letter-spacing: 0.05rem;
+    padding: 1rem;
+}
+
+#start {
+    display: flex;
+    flex-shrink: auto;
+}
+
+#start>a,
+#start>a:hover {
+    border-radius: 0.5rem;
+    color: white;
+}
+
+#start>a {
+    background-color: #F18807;
+}
+
+#start>a:hover {
+    background-color: rgba(241, 136, 7, 0.74);
+}
+
+#body {
     height: 100vh;
+    width: 100vw;
+    background-image: url("new_banner.png");
+    background-size: 100%;
+    background-repeat: no-repeat;
+    padding-bottom: 3rem;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    width: 100%;
+    height: 100vh;
+    position: relative;
+    top: 15vh;
+    width: 15vw;
+}
+
+.responsive-button {
+    padding: 1rem;
+    background-color: #F18807;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    flex-shrink: 1;
+    max-width: 300px;
+    min-width: 150px;
+}
+
+.responsive-button:hover {
+    background-color: rgba(241, 136, 7, 0.74);
+}
+
+@media (max-width: 600px) {
+    .responsive-button {
+        font-size: 14px;
+        padding: 10px 20px;
+    }
+}
+
+#footer {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    background-color: #f9f9f9;
+}
+
+#logo img {
+    height: 7rem;
+}
+
+div#footer>div#logo {
+    display: flex;
+    flex-direction: column;
+    letter-spacing: 0.05rem;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+#footer>div {
+    display: flex;
+    flex-direction: row;
+    gap: 4rem;
+    padding: 4rem;
+    padding-bottom: 3rem;
+    line-height: 2.5;
+}
+
+h3,
+ul,
+li {
     margin: 0;
     padding: 0;
-    font-family: 'Arial', sans-serif;
-    background-color: #d68421;
 }
 
-.navbar {
-    display: flex;
-    justify-content: flex-start; 
-    align-items: center;
-    padding: 10px 20px;
-    background-color: #000;
-    color: #fff;
+li {
+    list-style-type: none;
 }
 
-.navbar .logo {
-    font-size: 24px;
-    font-weight: bold;
-    text-transform: lowercase;
-    margin-right: 50px; 
-}
-
-.navbar ul {
-    list-style: none;
-    display: flex;
-    margin-right: auto;
-}
-
-.navbar ul li {
-    margin-right: 20px;
-}
-
-.navbar ul li a {
-    color: #fff;
+li>a {
+    color: black;
     text-decoration: none;
-    font-size: 16px;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
 }
 
-.navbar .login-btn {
-    background-color: #fff;
-    color: #000;
-    border: none;
-    padding: 10px 15px;
-    cursor: pointer;
-    font-size: 16px;
-    margin-left: auto;
-}
-
-
-.navbar .login-btn {
-    background-color: #fff;
-    color: #000;
-    border: none;
-    padding: 10px 15px;
-    cursor: pointer;
-    font-size: 16px;
-}
-
-.hero {
-    height: 100vh;
-    background-image: url('your-background-image.jpg');
-    background-size: cover;
-    background-position: center;
-    position: relative;
-}
-
-.overlay {
+#copyright {
     display: flex;
-    justify-content: flex-start; 
-    align-items: flex-end; 
-    height: 50%; 
-    width: 50%;
-    position: absolute;
-    top: 5%;
-    left: 5%;
-    text-align: center;
-    color: #fff;
-}
-
-.hero h1 {
-    font-size: 60px;
-    font-weight: bold;
-}
-
-.create-btn {
-    background-color: #ff6a00;
-    border: none;
-    color: #fff;
-    padding: 15px 30px;
-    margin-top: 30px;
-    border-radius: 5px;
-   
-}
-
-.login-btn {
-    margin-left: auto;
-    background-color: #fff;
-    color: #000;
-    border: none;
-    padding: 10px 15px;
-    cursor: pointer;
-    font-size: 16px;
-    border-radius: 5px;
-}
-
-.login-link {
-    color: inherit; 
-    text-decoration: none;
-    display: block;
+    flex-direction: row;
+    justify-content: center;
+    padding: 0.5rem;
+    letter-spacing: 0.03rem;
+    background-color: #F18807;
+    color: white
 }
