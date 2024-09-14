@@ -3,12 +3,119 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Welcome Back!</title>
-    <link rel="stylesheet" href="profilestyles.css">
+    <title>Profile</title>
+    <link rel="stylesheet" href="styles.css">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Varela:wght@400;700&display=swap" rel="stylesheet">
+
+    <style>
+        /* Global Styles */
+
+    * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+    }
+    
+    body {
+        font-family: 'Varela', sans-serif;
+        background-color: #000000; /* Light Gray */
+        color: #000; /* Black */
+    }
+    
+    /* Header Styles */
+    
+    .header {
+        background-color: #f18807; /* Orange */
+        color: black; /* White */
+        padding: .5em;
+        text-align: center;
+        
+    }
+    
+    .header h1 {
+        font-family: 'Montserrat', sans-serif;
+        font-size: 2em;
+        padding-top: .5em;
+        padding-bottom: 0.3em;
+    }
+    
+    /* Main Content Styles */
+    
+    .main-content {
+        max-width: 800px;
+        margin: 2em auto;
+        padding: 1em;
+        background-color: #fff; /* White */
+        border: 1px solid #636363; /* Dim Grey */
+        border-radius: 6px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+    
+    .main-content h2 {
+        font-family: 'Montserrat', sans-serif;
+        color: black; /* Blue */
+        margin-bottom: 0.5em;
+    }
+    
+    .main-content p {
+        font-size: 1.1em;
+        line-height: 1.6;
+        margin-bottom: 1em;
+    }
+    
+    .form-group {
+        margin-bottom: 1em;
+    }
+    
+    .form-group label {
+        display: block;
+        margin-bottom: 0.5em;
+    }
+    
+    .form-group input, .form-group select {
+        width: 100%;
+        padding: 0.5em;
+        border: 1px solid #636363; /* Dim Grey */
+    }
+    
+    .form-group input:focus, .form-group select:focus {
+        border-color: #f18807; /* Orange */
+        box-shadow: 0 0 5px rgba(241, 136, 7, 0.74); /* Dim Orange */
+    }
+    
+    /* Front End and Housing Sections */
+    
+    .button-group {
+        margin-top: 2em;
+        font-family: 'Montserrat', sans-serif;
+        margin-bottom: 0.5em;
+    }
+    
+    .return-button {
+        display: flex;
+        justify-content: left;
+        color:white;
+        text-decoration: none;
+        padding: 0.5em 1em;
+    }
+    
+    /* Button Styles */
+    
+    button[type="submit"] {
+        background-color: #f18807; /* Orange */
+        color: #fff; /* White */
+        padding: 0.5em 1em;
+        border: none;
+        cursor: pointer;
+    }
+    
+    button[type="submit"]:hover {
+        background-color: rgba(241, 136, 7, 0.74); /* Dim Orange */
+    }
+    </style>
 </head>
 <body>
-    <nav class="navbar">
+     <nav class="navbar">
         <div class="navbar-brand"><a href="index.html">SwipeOverFlow</a></div>
         <ul class="nav-links">
             <li><a href="feed.html">Feed</a></li>
@@ -20,6 +127,8 @@
     <header class="header">
         <h1>Welcome Back!</h1>
     </header>
+    <a href="index.html" class="return-button">Return to Homepage</a>
+
     <div class="main-content">
         <h2>Profile Information</h2>
         <form>
@@ -52,35 +161,37 @@
                 <input type="text" id="skills" name="skills">
             </div>
         </form>
-        <div class="front-end-section">
-            <h3>Front End</h3>
-            <p>Hackathon Experience:</p>
+        <div class="button-group">
+            <p>Hackathon Experience</p>
             <div class="form-group">
-                <input type="radio" id="never-attended" name="hackathon-experience" value="never-attended">
-                <label for="never-attended">Never Attended</label>
-                <input type="radio" id="1-3" name="hackathon-experience" value="1-3">
-                <label for="1-3">1-3</label>
-                <input type="radio" id="3-5" name="hackathon-experience" value="3-5">
-                <label for="3-5">3-5</label>
-                <input type="radio" id="5" name="hackathon-experience" value="5">
-                <label for="5">5</label>
+                <select id="hackathon-experience" name="hackathon-experience">
+                    <option value = "" disabled selected>[select]</option>
+                    <option value="never">No experience</option>
+                    <option value="1-3">Some experience (2-3 hackathons)</option>
+                    <option value="3-5">Lots of experience (4+ hackathons)</option>
+                </select>
             </div>
         </div>
-        <div class="housing-section">
-            <h3>Housing</h3>
+        <div class="button-group">
             <p>Do you have a place to stay?</p>
-            <div class="form-group">
-                <input type="radio" id="have-place" name="housing" value="have-place">
-                <label for="have-place">I have a place to stay</label>
-                <input type="radio" id="no-place" name="housing" value="no-place">
-                <label for="no-place">I don't have a place to stay</label>
+            <div class = "form-group">
+                <select id="housing" name="housing">
+                    <option value = "" disabled selected>[select]</option>
+                    <option value="cannot-share">I have a place to stay and can share with others</option>
+                    <option value="can-share">I have a place to stay but cannot share with others</option>
+                    <option value="needs-help">I do not have a place to stay</option>
+                </select>
             </div>
-            <p>Driving Status:</p>
-            <div class="form-group">
-                <input type="radio" id="can-drive" name="driving-status" value="can-drive">
-                <label for="can-drive">I can drive</label>
-                <input type="radio" id="need-help" name="driving-status" value="need-help">
-                <label for="need-help">I need help</label>
+        </div>
+        <div class = "button-group">
+            <p>Transportation</p>
+            <div class = "form-group">
+                <select id="driving-status" name="driving-status">
+                    <option value = "" disabled selected>[select]</option>
+                    <option value="cannot-help">I'm able to get to the hackathon but cannot provide transportation to others</option>
+                    <option value="needs-help">I need a ride</option>
+                    <option value="can-help">I can provide transportation for others</option>
+                </select>
             </div>
         </div>
         <button type="submit">Save</button>
