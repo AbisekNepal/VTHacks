@@ -116,10 +116,10 @@ def home():
         if domain: 
             query['domain'] = domain
 
-        # Fetch users from MongoDB based on the filter query
         users = users_collection.find(query)
 
-        return render_template('home.html', logged_in_user=user, users=users)
+        return render_template('feed.html', logged_in_user=user, users=users)
+    
     else:
         return redirect(url_for('login'))
 

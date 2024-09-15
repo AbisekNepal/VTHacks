@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SwipeOverFlow</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='assets/styles.css') }}">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Varela+Round&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
+</head>
+
+<body>
+    <div class="navbar">
+        <a class="navbar-brand" href="{{ url_for('login') }}">SwipeOverflow</a>
+        <span class="nav-links">
+            <a href="{{ url_for('login') }}">Feed</a>
+            <a href="{{ url_for('login') }}">Profile</a>
+            <a href="{{ url_for('login') }}">Matches</a>
+        </span>
+    </div>
+
+    <div class="filter-options">
+        <form method="get" action="/">
+            <button class="filter-button active">All</button>
+
+            <div class="dropdown">
+                <select class="filter-button" name="domain" id="domain">
+                    <option selected disabled>Domain</option>
+                    <option value="Front-end">Front-end</option>
+                    <option value="Back-end">Back-end</option>
+                    <option value="Full-stack">Full-stack</option>
+                </select>
+            </div>
+
+            <div class="dropdown">
+                <select class="filter-button" name="experience" id="experience">
+                    <option selected disabled>Experience</option>
+                    <option value="First-timer">First-timer</option>
+                    <option value="Veteran">Veteran</option>
+                </select>
+            </div>
+
+            <button class="filter-button">Same Interests</button>
+
+            <div class="dropdown">
+                <select class="filter-button" name="team_size" id="team_size">
+                    <option selected disabled>Team Size</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                </select>
+            </div>
+        </form>
+    </div>
+    <div class="feed-container">
+
+        {% for user in users %}
+
+        <div class="card" id="card-1">
+            <div class="card-header">
+                <h2>{{ user['name'] }}</h2>
+                <img class="profile-picture" src="{{ url_for('static', filename='images/Logo high-res.png') }}"
+                    alt="Profile Picture">
+            </div>
+            <div class="card-body">
+                <p>Interests: {{ user.get('domain', 'N/A') }}</p>
+                <p>Hackathon Experience: {{ user.get('experience', 'N/A') }}</p>
+                <p>University: {{ user.get('origin', 'N/A') }}</p>
+                <p>Preferred Team Size: {{ user.get('prefteamsize', 'N/A') }}</p>
+            </div>
+            <div class="card-footer">
+                <button class="swipe-button left" onclick="swipeLeft(1)">❌</button>
+                <button class="swipe-button right" onclick="swipeRight(1)">✔️</button>
+            </div>
+        </div>
+
+        {% endfor %}
+    </div>
+
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+</body>
+
+</html>
