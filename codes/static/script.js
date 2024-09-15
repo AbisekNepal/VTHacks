@@ -34,13 +34,24 @@ function showFirstCard() {
 function showNextCard() {
     const old = document.getElementById("curr")
     old.remove()
-    const next = mock_data.pop()
-    const new_element = document.createElement("div")
-    new_element.className = "card"
-    new_element.id = "curr"
-    new_element.innerHTML = `<div class="card-header"><h2>${next.fullname}</h2><img class="profile-picture" src="${imageUrl}" alt="Profile Picture"></div><div class="card-body"><p>Interests: ${next.interests}</p><p>Major: ${next.major}</p><p>Hackathon Experience: ${next.experience}</p><p>University: ${next.university}</p></div><div class="card-footer"><button class="swipe-button left" onclick="swipeLeft()">❌</button><button class="swipe-button right" onclick="swipeRight()">✔️</button></div>`
-    feed.appendChild(new_element)
-    currentCard++;
+    if (mock_data.length === 0) {
+        const next = mock_data.pop()
+        const new_element = document.createElement("div")
+        new_element.className = "card"
+        new_element.id = "curr"
+        new_element.innerHTML = `<div class="card-header"><h2>No more hackers!</h2><img class="profile-picture" src="${imageUrl}" alt="Profile Picture"></div><div class="card-body"><p style="text-align: center;">You have swiped through all of the hackers fitting your criteria. Try changing your filters or consider looking at other resources.</p></div>`
+        feed.appendChild(new_element)
+        currentCard++;
+    } else {
+        const next = mock_data.pop()
+        const new_element = document.createElement("div")
+        new_element.className = "card"
+        new_element.id = "curr"
+        new_element.innerHTML = `<div class="card-header"><h2>${next.fullname}</h2><img class="profile-picture" src="${imageUrl}" alt="Profile Picture"></div><div class="card-body"><p>Interests: ${next.interests}</p><p>Major: ${next.major}</p><p>Hackathon Experience: ${next.experience}</p><p>University: ${next.university}</p></div><div class="card-footer"><button class="swipe-button left" onclick="swipeLeft()">❌</button><button class="swipe-button right" onclick="swipeRight()">✔️</button></div>`
+        feed.appendChild(new_element)
+        currentCard++;
+    }
+
 }
 // Get the dropdown menu and its items
 const dropdownMenu = document.querySelector('.dropdown-menu');
