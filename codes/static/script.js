@@ -1,7 +1,10 @@
-let currentCard = 1;
+const feed = document.getElementById("swiper")
+let mock_data = [{ fullname: "Jade Tsai", interests: "Alcohol", major: "Psychology", experience: "none", university: "UNC" }, { fullname: "Bayne Albin", interests: "Weights", major: "ME", experience: "1-3", university: "UNCC" }, { fullname: "Ryan Suh", interests: "Video games", major: "CS", experience: "3-5", university: "NC State" }]
 
-function swipeLeft(cardIndex) {
-    const card = document.getElementById(`card-${cardIndex}`);
+showFirstCard()
+
+function swipeLeft() {
+    const card = document.getElementById(`curr`);
     card.classList.add('swipe-left');
     setTimeout(() => {
         card.style.display = 'none';
@@ -9,8 +12,8 @@ function swipeLeft(cardIndex) {
     }, 300);
 }
 
-function swipeRight(cardIndex) {
-    const card = document.getElementById(`card-${cardIndex}`);
+function swipeRight() {
+    const card = document.getElementById(`curr`);
     card.classList.add('swipe-right');
     setTimeout(() => {
         card.style.display = 'none';
@@ -18,14 +21,26 @@ function swipeRight(cardIndex) {
     }, 300);
 }
 
-function showNextCard() {
+function showFirstCard() {
+    const next = mock_data.pop()
+    const new_element = document.createElement("div")
+    new_element.className = "card"
+    new_element.id = "curr"
+    new_element.innerHTML = `<div class="card-header"><h2>${next.fullname}</h2><img class="profile-picture" src="${imageUrl}" alt="Profile Picture"></div><div class="card-body"><p>Interests: ${next.interests}</p><p>Major: ${next.major}</p><p>Hackathon Experience: ${next.experience}</p><p>University: ${next.university}</p></div><div class="card-footer"><button class="swipe-button left" onclick="swipeLeft()">❌</button><button class="swipe-button right" onclick="swipeRight()">✔️</button></div>`
+    feed.appendChild(new_element)
     currentCard++;
-    if (currentCard > 3) { 
-        currentCard = 1;
-    }
-    const nextCard = document.getElementById(`card-${currentCard}`);
-    nextCard.style.display = 'block';
-    nextCard.classList.remove('swipe-left', 'swipe-right');
+}
+
+function showNextCard() {
+    const old = document.getElementById("curr")
+    old.remove()
+    const next = mock_data.pop()
+    const new_element = document.createElement("div")
+    new_element.className = "card"
+    new_element.id = "curr"
+    new_element.innerHTML = `<div class="card-header"><h2>${next.fullname}</h2><img class="profile-picture" src="${imageUrl}" alt="Profile Picture"></div><div class="card-body"><p>Interests: ${next.interests}</p><p>Major: ${next.major}</p><p>Hackathon Experience: ${next.experience}</p><p>University: ${next.university}</p></div><div class="card-footer"><button class="swipe-button left" onclick="swipeLeft()">❌</button><button class="swipe-button right" onclick="swipeRight()">✔️</button></div>`
+    feed.appendChild(new_element)
+    currentCard++;
 }
 // Get the dropdown menu and its items
 const dropdownMenu = document.querySelector('.dropdown-menu');

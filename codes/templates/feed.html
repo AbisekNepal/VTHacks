@@ -42,57 +42,12 @@
             </select>
         </div>
     </div>
-    <div class="feed-container">
-        <div class="card" id="card-1">
-            <div class="card-header">
-                <h2>John Doe</h2>
-                <img class="profile-picture" src="{{url_for('static', filename='Logo high-res.png')}}" alt="Profile Picture">
-            </div>
-            <div class="card-body">
-                <p>Interests: Web Development, Machine Learning, Data Science</p>
-                <p>Major: Computer Science</p>
-                <p>Hackathon Experience: 1-3</p>
-                <p>University: Harvard University</p>
-            </div>
-            <div class="card-footer">
-                <button class="swipe-button left" onclick="swipeLeft(1)">❌</button>
-                <button class="swipe-button right" onclick="swipeRight(1)">✔️</button>
-            </div>
-        </div>
-        <div class="card" id="card-2" style="display: none;">
-            <div class="card-header">
-                <h2>Jane Smith</h2>
-                <img class="profile-picture" src="{{url_for('static', filename='Logo high-res.png')}}" alt="Profile Picture">
-            </div>
-            <div class="card-body">
-                <p>Interests: Mobile App Development, Cloud Computing, Cyber Security</p>
-                <p>Major: Computer Science</p>
-                <p>Hackathon Experience: 1-3</p>
-                <p>University: Harvard University</p>
-            </div>
-            <div class="card-footer">
-                <button class="swipe-button left" onclick="swipeLeft(2)">❌</button>
-                <button class="swipe-button right" onclick="swipeRight(2)">✔️</button>
-            </div>
-        </div>
-        <div class="card" id="card-3" style="display: none;">
-            <div class="card-header">
-                <h2>Bob Johnson</h2>
-                <img class="profile-picture" src="{{url_for('static', filename='Logo high-res.png')}}" alt="Profile Picture">
-            </div>
-            <div class="card-body">
-                <p>Interests: Artificial Intelligence, Blockchain, IoT Development</p>
-                <p>Major: Computer Science</p>
-                <p>Hackathon Experience: 1-3</p>
-                <p>University: Harvard University</p>
-            </div>
-            <div class="card-footer">
-                <button class="swipe-button left" onclick="swipeLeft(3)">❌</button>
-                <button class="swipe-button right" onclick="swipeRight(3)">✔️</button>
-            </div>
-        </div>
+    <div id="swiper" class="feed-container">
     </div>
-
+    <script>
+        // Pass the image URL to JavaScript
+        const imageUrl = "{{ url_for('static', filename='high-res.png') }}";
+    </script>
     <script src="{{ url_for('static', filename='script.js') }}"></script>
 </body>
 
