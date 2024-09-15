@@ -4,7 +4,7 @@
 
 body {
     font-family: 'Montserrat', sans-serif;
-    background-color: #f4f4f9;
+    background-color: #000;
     color: #000000;
     margin: 0;
     padding: 0;
@@ -55,7 +55,7 @@ h1 {
     font-family: 'Varela Round', sans-serif;
     font-size: 2em;
     margin-bottom: 1em;
-    color: #636363;
+    color: white;
 }
 
 .matches-list {

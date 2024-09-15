@@ -5,58 +5,67 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Swipe Overflow | Home</title>
-    <link rel="stylesheet" href="indexstylesheet.css">
+    <!-- Link to CSS using url_for -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='indexstylesheet.css') }}">
     <link
         href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Varela:wght@400;700&display=swap"
         rel="stylesheet">
 </head>
 
 <body>
+    <!-- Navigation links to other Flask routes -->
     <div id="navigation">
-        <a href="">Home</a>
+        <a href="{{ url_for('home') }}">Home</a>
         <span>
-            <a href="">About</a>
-            <a href="">Features</a>
-            <a href="">Contact</a>
+            <a href="{{ url_for('about') }}">About</a>
+            <a href="{{ url_for('features') }}">Features</a>
+            <a href="{{ url_for('contact') }}">Contact</a>
         </span>
     </div>
+
+    <!-- Body content -->
     <div id="body">
         <div class="container">
-            <a href="start.html">
+            <a href="{{ url_for('start') }}">
                 <button class="responsive-button">GET STARTED</button>
             </a>
         </div>
     </div>
+
+    <!-- Footer content with dynamic image reference -->
     <div id="footer">
         <div id="logo">
-            <img src="logo.png" alt="Swipe Overflow Stock Logo">
+            <!-- Reference logo using url_for -->
+            <img src="{{ url_for('static', filename='logo.png') }}" alt="Swipe Overflow Stock Logo">
             <p>SWIPE OVERFLOW</p>
         </div>
         <div>
             <div class="card">
                 <h3>SWIPE OVERFLOW</h3>
                 <ul>
-                    <li><a href="">About</a></li>
-                    <li><a href="">Features</a></li>
-                    <li><a href="">Contact</a></li>
+                    <li><a href="{{ url_for('about') }}">About</a></li>
+                    <li><a href="{{ url_for('features') }}">Features</a></li>
+                    <li><a href="{{ url_for('contact') }}">Contact</a></li>
                 </ul>
             </div>
             <div class="card">
                 <h3>RESOURCES</h3>
                 <ul>
-                    <li><a href="">Git Hub</a></li>
-                    <li><a href="">Dev Post</a></li>
+                    <li><a href="https://github.com">Git Hub</a></li>
+                    <li><a href="https://devpost.com">Dev Post</a></li>
                 </ul>
             </div>
             <div class="card">
                 <h3>ABOUT</h3>
                 <ul>
-                    <li><a href="">Terms & Conditions</a></li>
-                    <li><a href="">Privacy Policy</a></li>
+                    <li><a href="{{ url_for('terms') }}">Terms & Conditions</a></li>
+                    <li><a href="{{ url_for('privacy') }}">Privacy Policy</a></li>
                 </ul>
             </div>
         </div>
     </div>
+
+    <!-- Copyright -->
     <div id="copyright">
         <p>Copyright &copy; 2024 SwipeOverflow</p>
     </div>
