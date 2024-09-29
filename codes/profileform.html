@@ -5,14 +5,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Profile</title>
-    <link rel="stylesheet" href="styles.css">
+    <!-- Link to your CSS file using Flask's url_for function -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
     <link
         href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Varela:wght@400;700&display=swap"
         rel="stylesheet">
 
     <style>
         /* Global Styles */
-
         * {
             box-sizing: border-box;
             margin: 0;
@@ -22,21 +22,15 @@
         body {
             font-family: 'Varela', sans-serif;
             background-color: #000000;
-            /* Light Gray */
             color: #000;
-            /* Black */
         }
 
         /* Header Styles */
-
         .header {
             background-color: #f18807;
-            /* Orange */
             color: black;
-            /* White */
             padding: .5em;
             text-align: center;
-
         }
 
         .header h1 {
@@ -47,15 +41,12 @@
         }
 
         /* Main Content Styles */
-
         .main-content {
             max-width: 800px;
             margin: 2em auto;
             padding: 1em;
             background-color: #fff;
-            /* White */
             border: 1px solid #636363;
-            /* Dim Grey */
             border-radius: 6px;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
         }
@@ -63,7 +54,6 @@
         .main-content h2 {
             font-family: 'Montserrat', sans-serif;
             color: black;
-            /* Blue */
             margin-bottom: 0.5em;
         }
 
@@ -87,19 +77,15 @@
             width: 100%;
             padding: 0.5em;
             border: 1px solid #636363;
-            /* Dim Grey */
         }
 
         .form-group input:focus,
         .form-group select:focus {
             border-color: #f18807;
-            /* Orange */
             box-shadow: 0 0 5px rgba(241, 136, 7, 0.74);
-            /* Dim Orange */
         }
 
         /* Front End and Housing Sections */
-
         .button-group {
             margin-top: 2em;
             font-family: 'Montserrat', sans-serif;
@@ -115,12 +101,9 @@
         }
 
         /* Button Styles */
-
         button[type="submit"] {
             background-color: #f18807;
-            /* Orange */
             color: #fff;
-            /* White */
             padding: 0.5em 1em;
             border: none;
             cursor: pointer;
@@ -128,91 +111,94 @@
 
         button[type="submit"]:hover {
             background-color: rgba(241, 136, 7, 0.74);
-            /* Dim Orange */
         }
     </style>
 </head>
 
 <body>
     <div class="navbar">
-        <a class="navbar-brand" href="index.html">SwipeOverflow</a>
+        <!-- Use Flask's url_for to reference routes -->
+        <a class="navbar-brand" href="{{ url_for('index') }}">SwipeOverflow</a>
         <span class="nav-links">
-            <a href="feed.html">Feed</a>
-            <a href="profileform.html">Profile</a>
-            <a href="matches.html">Matches</a>
+            <a href="{{ url_for('feed') }}">Feed</a>
+            <a href="{{ url_for('profile') }}">Profile</a>
+            <a href="{{ url_for('matches') }}">Matches</a>
         </span>
     </div>
+
     <header class="header">
         <h1 style="padding-top: 0;">Welcome Back!</h1>
     </header>
 
     <div class="main-content">
         <h2>Profile Information</h2>
-        <form>
+        <form method="POST" action="{{ url_for('save_profile') }}">
             <div class="form-group">
                 <label for="name">Name:</label>
-                <input type="text" id="name" name="name">
+                <input type="text" id="name" name="name" value="{{ profile.name }}">
             </div>
             <div class="form-group">
                 <label for="email">Email Address:</label>
-                <input type="email" id="email" name="email">
+                <input type="email" id="email" name="email" value="{{ profile.email }}">
             </div>
             <div class="form-group">
                 <label for="new-password">New Password:</label>
-                <input type="password" id="new-password" name="new-password">
+                <input type="password" id="new-password" name="new_password">
             </div>
             <div class="form-group">
                 <label for="confirm-password">Confirm Password:</label>
-                <input type="password" id="confirm-password" name="confirm-password">
+                <input type="password" id="confirm-password" name="confirm_password">
             </div>
             <div class="form-group">
                 <label for="university">University:</label>
-                <input type="text" id="university" name="university">
+                <input type="text" id="university" name="university" value="{{ profile.university }}">
             </div>
             <div class="form-group">
                 <label for="interests">Interests:</label>
-                <input type="text" id="interests" name="interests">
+                <input type="text" id="interests" name="interests" value="{{ profile.interests }}">
             </div>
             <div class="form-group">
                 <label for="skills">Skills:</label>
-                <input type="text" id="skills" name="skills">
+                <input type="text" id="skills" name="skills" value="{{ profile.skills }}">
             </div>
+
+            <div class="button-group">
+                <p>Hackathon Experience</p>
+                <div class="form-group">
+                    <select id="hackathon-experience" name="hackathon_experience">
+                        <option value="" disabled selected>[select]</option>
+                        <option value="never">No experience</option>
+                        <option value="1-3">Some experience (2-3 hackathons)</option>
+                        <option value="3-5">Lots of experience (4+ hackathons)</option>
+                    </select>
+                </div>
+            </div>
+            <div class="button-group">
+                <p>Do you have a place to stay?</p>
+                <div class="form-group">
+                    <select id="housing" name="housing">
+                        <option value="" disabled selected>[select]</option>
+                        <option value="cannot-share">I have a place to stay and can share with others</option>
+                        <option value="can-share">I have a place to stay but cannot share with others</option>
+                        <option value="needs-help">I do not have a place to stay</option>
+                    </select>
+                </div>
+            </div>
+            <div class="button-group">
+                <p>Transportation</p>
+                <div class="form-group">
+                    <select id="driving-status" name="driving_status">
+                        <option value="" disabled selected>[select]</option>
+                        <option value="cannot-help">I'm able to get to the hackathon but cannot provide transportation
+                            to others</option>
+                        <option value="needs-help">I need a ride</option>
+                        <option value="can-help">I can provide transportation for others</option>
+                    </select>
+                </div>
+            </div>
+
+            <button type="submit">Save</button>
         </form>
-        <div class="button-group">
-            <p>Hackathon Experience</p>
-            <div class="form-group">
-                <select id="hackathon-experience" name="hackathon-experience">
-                    <option value="" disabled selected>[select]</option>
-                    <option value="never">No experience</option>
-                    <option value="1-3">Some experience (2-3 hackathons)</option>
-                    <option value="3-5">Lots of experience (4+ hackathons)</option>
-                </select>
-            </div>
-        </div>
-        <div class="button-group">
-            <p>Do you have a place to stay?</p>
-            <div class="form-group">
-                <select id="housing" name="housing">
-                    <option value="" disabled selected>[select]</option>
-                    <option value="cannot-share">I have a place to stay and can share with others</option>
-                    <option value="can-share">I have a place to stay but cannot share with others</option>
-                    <option value="needs-help">I do not have a place to stay</option>
-                </select>
-            </div>
-        </div>
-        <div class="button-group">
-            <p>Transportation</p>
-            <div class="form-group">
-                <select id="driving-status" name="driving-status">
-                    <option value="" disabled selected>[select]</option>
-                    <option value="cannot-help">I'm able to get to the hackathon but cannot provide transportation to
-                        others</option>
-                    <option value="needs-help">I need a ride</option>
-                    <option value="can-help">I can provide transportation for others</option>
-                </select>
-            </div>
-        </div>
-        <button type="submit">Save</button>
     </div>
 </body>
 

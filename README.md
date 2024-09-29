@@ -69,7 +69,7 @@ We have several upgrades planned for Swipe Overflow:
 Swipe Overflow was developed by:
 
 - **Abhishek Nepal**
-- **Ethan**
+- **Ethan-Dang Ton**
 - **Olivia Watt**
 - **Aidan Kim**
 
